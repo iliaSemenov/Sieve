@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tep-nJ-bFj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tep-nJ-bFj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,68 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-LF-MFT">
-                                <rect key="frame" x="0.0" y="146" width="375" height="64"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите число сюда" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="psf-Fu-bTp">
-                                        <rect key="frame" x="16" y="0.0" width="289" height="64"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" red="0.21728132659999999" green="0.1910306245" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdu-8b-g7M">
-                                        <rect key="frame" x="311" y="0.0" width="64" height="64"/>
-                                        <color key="backgroundColor" red="0.99012586805555558" green="0.82636176215277779" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="0qg-Ha-mhX"/>
-                                            <constraint firstAttribute="width" constant="64" id="YDm-4x-CKV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="46"/>
-                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="6"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="at1-7B-Ehf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите число сюда" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="psf-Fu-bTp">
+                                <rect key="frame" x="43" y="277" width="289" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Bdu-8b-g7M" firstAttribute="top" secondItem="wbv-LF-MFT" secondAttribute="top" id="31C-UA-R57"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bdu-8b-g7M" secondAttribute="bottom" id="Bev-ew-G1H"/>
-                                    <constraint firstItem="Bdu-8b-g7M" firstAttribute="leading" secondItem="psf-Fu-bTp" secondAttribute="trailing" constant="6" id="EbA-lP-sFd"/>
-                                    <constraint firstItem="psf-Fu-bTp" firstAttribute="leading" secondItem="wbv-LF-MFT" secondAttribute="leading" constant="16" id="F3E-Od-pvP"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bdu-8b-g7M" secondAttribute="trailing" id="H0x-f1-uWB"/>
-                                    <constraint firstItem="psf-Fu-bTp" firstAttribute="top" secondItem="wbv-LF-MFT" secondAttribute="top" id="jMa-rF-PUL"/>
-                                    <constraint firstAttribute="bottom" secondItem="psf-Fu-bTp" secondAttribute="bottom" id="wat-ws-E2I"/>
+                                    <constraint firstAttribute="width" constant="289" id="CXe-Ec-mHK"/>
+                                    <constraint firstAttribute="height" constant="64" id="JQ8-4W-kJI"/>
                                 </constraints>
-                            </view>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3f4-HJ-vIX">
-                                <rect key="frame" x="0.0" y="210" width="375" height="408"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellEnter" id="Sg5-gp-NUJ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="40"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sg5-gp-NUJ" id="Zoi-w0-bIc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Tnf-IW-Ajq"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mrk-qz-nDO"/>
-                                </connections>
-                            </tableView>
+                                <color key="textColor" red="0.21728132659999999" green="0.1910306245" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-fX-Nw0">
-                                <rect key="frame" x="98" y="45" width="179" height="57.5"/>
+                                <rect key="frame" x="98" y="159" width="179" height="57.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Решето" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1n-xa-njJ">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="20.5"/>
@@ -92,36 +48,57 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Эратосфена" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLz-qy-LLM">
                                         <rect key="frame" x="0.0" y="20.5" width="179" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="179" id="8Pl-fZ-7Lq"/>
+                                            <constraint firstAttribute="height" constant="37" id="rpm-5t-kMS"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="179" id="nr9-YO-Qfn"/>
-                                    <constraint firstAttribute="height" constant="57.5" id="pPl-Ij-3hp"/>
+                                    <constraint firstAttribute="width" constant="179" id="9Ce-3e-GgC"/>
+                                    <constraint firstAttribute="height" constant="57.5" id="CH5-GD-G0T"/>
+                                    <constraint firstItem="FLz-qy-LLM" firstAttribute="top" secondItem="A1n-xa-njJ" secondAttribute="bottom" id="EQt-XK-ElM"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdu-8b-g7M">
+                                <rect key="frame" x="147" y="401" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.99012586805555558" green="0.82636176215277779" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="EvD-GZ-j7I"/>
+                                    <constraint firstAttribute="height" constant="80" id="bRX-zV-4QZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="83"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="13"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="at1-7B-Ehf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25098039215686274" green="0.1803921568627451" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3f4-HJ-vIX" firstAttribute="top" secondItem="wbv-LF-MFT" secondAttribute="bottom" id="5oZ-WD-daA"/>
-                            <constraint firstItem="3f4-HJ-vIX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dfy-RR-2gi"/>
-                            <constraint firstItem="3f4-HJ-vIX" firstAttribute="top" secondItem="wbv-LF-MFT" secondAttribute="bottom" id="Io7-jL-yKQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3f4-HJ-vIX" secondAttribute="bottom" id="LCl-6I-FTt"/>
-                            <constraint firstItem="Vtb-fX-Nw0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sa2-Yn-Ys5"/>
-                            <constraint firstItem="wbv-LF-MFT" firstAttribute="top" secondItem="Vtb-fX-Nw0" secondAttribute="bottom" constant="43.5" id="cd8-OH-h2f"/>
-                            <constraint firstAttribute="trailing" secondItem="wbv-LF-MFT" secondAttribute="trailing" id="dxd-em-DNl"/>
-                            <constraint firstAttribute="trailing" secondItem="3f4-HJ-vIX" secondAttribute="trailing" id="ncT-MW-wKo"/>
-                            <constraint firstItem="Vtb-fX-Nw0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="rLl-3o-yay"/>
-                            <constraint firstItem="wbv-LF-MFT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vsm-C8-tL8"/>
+                            <constraint firstItem="Bdu-8b-g7M" firstAttribute="top" secondItem="psf-Fu-bTp" secondAttribute="bottom" constant="60" id="GBc-M7-kO9"/>
+                            <constraint firstItem="psf-Fu-bTp" firstAttribute="top" secondItem="Vtb-fX-Nw0" secondAttribute="bottom" constant="60" id="LHU-qN-5ha"/>
+                            <constraint firstItem="psf-Fu-bTp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mij-Zg-qaL"/>
+                            <constraint firstItem="Vtb-fX-Nw0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RxI-Uo-AgH"/>
+                            <constraint firstItem="Bdu-8b-g7M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6f-bE-c88"/>
+                            <constraint firstItem="psf-Fu-bTp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ggH-43-0fw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ввод" image="enter" selectedImage="enter" id="dyP-XQ-RbP"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="enterTextField" destination="psf-Fu-bTp" id="vPS-HL-v6u"/>
-                        <outlet property="tableEnter" destination="3f4-HJ-vIX" id="4KX-cg-tQZ"/>
                         <outlet property="tapToCloseTextField" destination="jr6-1k-XUD" id="b77-Yi-F5v"/>
                     </connections>
                 </viewController>

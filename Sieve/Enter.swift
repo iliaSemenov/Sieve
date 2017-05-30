@@ -8,15 +8,14 @@
 
 import UIKit
 
-var arrayEnter: [CUnsignedLongLong] = []
+var entered: CUnsignedLongLong = 0
 
-class Enter: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate
+class Enter: UIViewController, UITextFieldDelegate
 {
-    @IBOutlet weak var tableEnter: UITableView!
     @IBOutlet var tapToCloseTextField: UITapGestureRecognizer!
     @IBOutlet weak var enterTextField: UITextField!
     
-    let limitLength = 19
+    let limitLength = 15
     
     override func viewDidLoad()
     {
@@ -31,7 +30,6 @@ class Enter: UIViewController, UITableViewDelegate, UITableViewDataSource, UITex
     
     @IBAction func addNumber(_ sender: Any)
     {
-
         if enterTextField.text == ""
         {
            showError(title: "Требуется число", message: "Поле не должно быть пустым!")
@@ -42,43 +40,10 @@ class Enter: UIViewController, UITableViewDelegate, UITableViewDataSource, UITex
         }
         else
         {
-            arrayEnter.append(CUnsignedLongLong(enterTextField.text!)!)
-            tableEnter.reloadData()
+            entered = CUnsignedLongLong(enterTextField.text!)!
         }
         enterTextField.text = ""
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return arrayEnter.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEnter")
-        cell?.textLabel?.text = "\(arrayEnter[indexPath.row])"
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    {
-        return "Введённые числа"
-    }
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
-    {
-        let delete = UITableViewRowAction(style: .destructive, title: "Удалить", handler: {(row, action) -> Void in
-            arrayEnter.remove(at: indexPath.row)
-            self.tableEnter.reloadData()
-        })
-        return [delete]
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
