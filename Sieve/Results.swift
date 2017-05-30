@@ -8,14 +8,14 @@
 
 import UIKit
 
-var arrayResults: [CUnsignedLongLong] = []
-var primeArray: [CUnsignedLongLong] = []
-var summ = CUnsignedLongLong()
-
 class Results: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet weak var tableResults: UITableView!
     @IBOutlet weak var sumLabel: UILabel!
+    
+    var arrayResultsFiltered: [CUnsignedLongLong] = []
+    var arrayResults: [CUnsignedLongLong] = []
+    var summ = CUnsignedLongLong()
     
     override func viewDidLoad()
     {
@@ -24,8 +24,11 @@ class Results: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool)
     {
-        sieve() // Здесь происходит анализ является ли введённое число простым (анализируется в функции baseSettings())
-        sum() // Итерация по массиву и суммирование результата
+        if entered != 0
+        {
+            sieve() // Метод решета Эратосфена + оптимизация поиска
+            sum() // Итерация по массиву и суммирование результата
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int
     {
@@ -34,13 +37,13 @@ class Results: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrayResults.count
+        return arrayResultsFiltered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellResults")
-        cell?.textLabel?.text = "\(arrayResults[indexPath.row])"
+        cell?.textLabel?.text = "\(arrayResultsFiltered[indexPath.row])"
         return cell!
     }
     
@@ -63,58 +66,55 @@ class Results: UIViewController, UITableViewDelegate, UITableViewDataSource
     {
         return true
     }
-    
-    func baseSettings(minValue: CUnsignedLongLong, maxValue: CUnsignedLongLong) // Оптимизация поиска. Создание диапазона и проверка на наличие простого числа в диапазоне
-    {
-        primeArray.removeAll()
-        
-        for index in minValue..<maxValue + 1
-        {
-            primeArray.append(CUnsignedLongLong(index))
-        }
-        
-        for i in 0..<primeArray.count
-        {
-            if (primeArray[i] != 0)
-            {
-                for j in 0..<primeArray.count
-                {
-                    if (primeArray[j]%2 == 0) || (primeArray[j]%3 == 0) || (primeArray[j]%5 == 0) || (primeArray[j]%7 == 0)
-                    {
-                        primeArray[j] = 0
-                    }
-                }
-            }
-        }
-    }
-    
+
     func sieve()
     {
         arrayResults.removeAll()
-        
-
-        for i in 0..<arrayEnter.count
+        var min: CUnsignedLongLong = CUnsignedLongLong()
+        if entered > 1000
         {
-            if (arrayEnter[i] == 2) || (arrayEnter[i] == 3) || (arrayEnter[i] == 5) || (arrayEnter[i] == 7)
+            min = entered - 100
+        }
+        else
+        {
+            min = 2
+        }
+        
+        for index in min..<entered + 1
+        {
+            arrayResults.append(CUnsignedLongLong(index))
+        }
+        for i in 0..<arrayResults.count
+        {
+            if (arrayResults[i] != 0)
             {
-                arrayResults.append(arrayEnter[i])
-            }
-            else
-            {
-                baseSettings(minValue: arrayEnter[i], maxValue: arrayEnter[i] + 30)
-                for j in 0..<primeArray.count
+                for j in 0..<arrayResults.count
                 {
-                    if arrayEnter[i] == primeArray[j]
+                    if (arrayResults[j]%2 == 0) && (arrayResults[j] != 2) || (arrayResults[j]%3 == 0) && (arrayResults[j] != 3) || (arrayResults[j]%5 == 0) && (arrayResults[j] != 5) || (arrayResults[j]%7 == 0) && (arrayResults[j] != 7)
                     {
-                        arrayResults.append(arrayEnter[i])
-                        break
+                        arrayResults[j] = 0
+                        
                     }
                 }
             }
         }
+        filteringResultArray()
         tableResults.reloadData()
     }
+
     
+    func filteringResultArray() // Очищаю массив arrayResults от "0" для таблицы
+    {
+        arrayResultsFiltered.removeAll()
+        
+        for i in 0..<arrayResults.count
+        {
+            if arrayResults[i] != 0
+            {
+                arrayResultsFiltered.append(arrayResults[i])
+            }
+        }
+    }
     
     func sum()
     {
